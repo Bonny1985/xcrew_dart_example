@@ -1,16 +1,28 @@
 void main(List<String> arguments) {
+
   /*
   TIPO NOME_VAR = VALORE
   */
   int number = 123;
+  double pigreco = 3.144444;
   String word = "Hello word!!";
   bool flag = true;
 
   var any = "test";
   var any2 = 456;
 
-  print("number=$number, word=$word, any=$any, any2=$any2, flag=$flag");
+  print("number=$number, pigreco=$pigreco, word=$word, any=$any, any2=$any2, flag=$flag");
 
+  /*
+  COSTANTI
+  final|const TIPO NOME_VAR = VALORE
+  */
+
+  final int number2 = 789;
+  //number2 = 89;
+  const int number3 = 987;
+  //number3 = 66;
+  
   /*
   OPRERATORE +
   TRA NUMERI => SUM
@@ -24,16 +36,6 @@ void main(List<String> arguments) {
   print("concat=$concat");
 
   /*
-  COSTANTI
-  final|const TIPO NOME_VAR = VALORE
-  */
-
-  final int number2 = 789;
-  //number2 = 89;
-  const int number3 = 987;
-  //number3 = 66;
-
-  /*
   ARRAY 
   List<TIPO>|var NOME_VAR = <TIPO>[VALORE]
   */
@@ -44,10 +46,8 @@ void main(List<String> arguments) {
     int tmp = array1[i];
     print("array1[$i] = $tmp");
   }
-  int max = maxOfArray(array1);
-  print("max=$max");
 
-  List<int> array2 = <int>[88, 55, 99];
+  List<int> array2 = <int>[88, 55, 99, 456, 8, 45];
 
   print("### PRINT ARRAY ###");
   for (int i = 0; i < array2.length; i++) {
@@ -55,40 +55,24 @@ void main(List<String> arguments) {
     print("array2[$i] = $tmp");
   }
 
-  List array3 = [88, 55, 99];
-
-  print("### PRINT ARRAY ###");
-  for (int i = 0; i < array3.length; i++) {
-    int tmp = array3[i];
-    print("array3[$i] = $tmp");
-  }
-
   List array22 = [88, 55, "text5", 99, "text1"];
-  printArray(array22);
-}
 
-void printArray(List<dynamic> a) {
   print("### PRINT ARRAY ###");
-  for (int i = 0; i < a.length; i++) {
-    var tmp = a[i].toString();
-    print("a[$i] = $tmp");
+  for (int i = 0; i < array22.length; i++) {
+    var tmp = array22[i];
+    print("array2[$i] = $tmp");
   }
 }
 
-int maxOfArray(List<int> numbers) {
-  int max = 0;
 
-  if (numbers.isNotEmpty) {
-    // equal to: numbers.length > 0
+class Student {
 
-    max = numbers[0];
+  int id = 0;
+  String name = "";
+  int age = 0;
 
-    for (int i = 1; i < numbers.length; i++) {
-      if (numbers[i] > max) {
-        max = numbers[i];
-      }
-    }
+  @override
+  String toString() {
+    return "Strudent{id=$id, name=$name, age=$age}";
   }
-
-  return max;
 }
