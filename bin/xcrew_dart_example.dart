@@ -2,6 +2,11 @@ import 'array_utility.dart';
 import 'student.dart';
 
 void main(List<String> arguments) {
+
+  List<int> lista = [];
+  lista.add(2);
+  lista.add(2);
+
   /*
   TIPO NOME_VAR = VALORE
   */
