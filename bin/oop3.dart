@@ -8,6 +8,15 @@ abstract class Figura {
   double area();
 }
 
+class Image implements Disegnabile {
+  String path=".../jhjj/image.png";
+
+  @override
+  void disegna() {
+    print("disegno l'immaigne");
+  }
+}
+
 class Cerchio extends Figura implements Disegnabile {
   double raggio = 0;
 
@@ -27,6 +36,7 @@ class Cerchio extends Figura implements Disegnabile {
 
 class Cilindro extends Cerchio implements Disegnabile {
   double altezza = 1;
+  
 
   Cilindro(double raggio, {required this.altezza})
       : super(raggio: raggio, colore: "nero");
@@ -50,6 +60,9 @@ void main(List<String> arguments) {
   print("volume = ${c.volume()}");
 
   stampaArea(c);
+
+  List<Disegnabile> lista = [];
+
 }
 
 void stampaArea(Figura f) {

@@ -27,16 +27,25 @@ class Cerchio extends Figura {
 }
 
 void main(List<String> arguments) {
+
+  List<Figura> lista = [];
+
   Figura f0 = Figura();
+  lista.add(f0);
   print("area figura = ${f0.area()}");
+
   Figura f1 = Quadrato(lato: 4);
+  lista.add(f1);
   print("area quadrato = ${f1.area()}");
+
   Figura f2 = Cerchio(raggio: 4);
+  lista.add(f2);
   print("area cerchio = ${f2.area()}");
 
-  stampaArea(f0);
-  stampaArea(f1);
-  stampaArea(f2);
+  for (Figura f in lista) {
+    stampaArea(f);
+  }
+
 }
 
 void stampaArea(Figura f) {
