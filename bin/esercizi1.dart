@@ -139,7 +139,7 @@ bool isUniqueNumbersGiuse(List<int> list) {
   list.sort();
   int i = 0;
   while (i < list.length - 1 && !found) {
-    found = list[i] == list[i + 1] ? true : false;
+    found = list[i] == list[i + 1];
     i++;
   }
   return !found;
